@@ -1,0 +1,19 @@
+/* src/app/cart/cart.component.css  */
+
+table,
+th,
+td {
+    border: 1px dashed rgb(167, 167, 167);
+    border-collapse: collapse;
+
+}
+
+th {
+    color: white;
+    background-color: rgb(4, 4, 122);
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+}

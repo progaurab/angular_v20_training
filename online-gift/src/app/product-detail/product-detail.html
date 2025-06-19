@@ -1,0 +1,51 @@
+<!-- src/app/product-detail/product-detail.component.html -->
+
+<div id="product_container">
+    <section class="box" style="margin-top: 100px;">
+
+        <div *ngIf="errorMessage" class="error-message" style="color: red; margin-bottom: 20px;">
+            {{errorMessage}}
+        </div>
+
+        <div class="content" *ngIf="product && !errorMessage">
+
+            <div class="left">
+                <div class="product_img" style="background: url('{{product.imageUrl}}') no-repeat; ">
+
+                </div>
+                <div class="product_details">
+                    <h4 class="title">{{product.name}}</h4>
+                    <p class="discription">{{product.description}}</p>
+                    <p class="price">{{ product.price | currency }} 
+                      <span class="price_original">$4000</span> <span
+                            class="offer"> 79% OFF</span></p>
+                    <p class="other">inclusive of all taxes</p>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="product_description">
+                    <h4>PRODUCT DESCRIPTION</h4>
+                    <p>Elevate your style with this classy pair of Casual Shoes from the house of Our brand. Featuring a
+                        contemporary refined design with exceptional comfort, this pair is perfect to give your
+                        quintessential dressing an upgrade.
+                    </p>
+                    <p><span class="highlight">Country of Origin -</span>
+                        India
+                    </p>
+
+
+                    <p>
+                        <button *ngIf="!isInCart" (click)="addToCart()" class="bg-red-700 text-white"
+                            style="padding:8px">Add to Cart</button>
+                        <button *ngIf="isInCart" routerLink="/cart" routerLinkActive="active"
+                            ariaCurrentWhenActive="page" class="bg-green-700 text-white" style="padding:8px">Go to
+                            Cart</button>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
